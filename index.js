@@ -64,8 +64,9 @@ mongoose
 
       //Iteration 5
       .then(() => {
-        Recipe.deleteOne({ title: "Carrot Cake" }) // it doesnt work
-        console.log("deleted")
+        Recipe.deleteOne({ title: "Carrot Cake" }).then(() => {
+          console.log("item deleted")
+        })
       })
       .catch((error) => {
         console.error("Error connecting to the database", error)
